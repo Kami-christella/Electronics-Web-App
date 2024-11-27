@@ -1,0 +1,73 @@
+﻿@page
+@model ElectronicsWebApp.Pages.ElectronicsMNGMTModel
+
+<p>@Model.message</p> 
+<div class="card">
+    <div class="card-body">
+        <form method="post">
+            <div class="row">
+                <div class="form-group col">
+                    <label>Device Name</label>
+                    <input class="form-control" name="DeviceName" />
+                </div>
+                <div class="form-group col">
+                    <label>Manufacturer</label>
+                    <input class="form-control" name="Manufacturer" />
+                </div>
+                <div class="form-group col">
+                    <label>Price</label>
+                    <input class="form-control" name="Price" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col">
+                    <label>Device Counts</label>
+                    <input class="form-control" name="DeviceCounts" />
+                </div>
+                <div class="form-group col">
+                    <label>Device Category</label>
+                    <select name="DeviceCategory" class="form-control">
+                        @foreach(var category in Model.categoriesList)
+                        {
+                            <option value="@category.CategoryId">@category</option>
+                        }
+
+                    </select>
+                </div>
+                <div class="form-group col">
+                    <label>Device Picture</label>
+                    <input class="form-control" name="DevicePicture" />
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Item</button>
+        </form>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Device Name</th>
+                    <th scope="col">Manufacturer</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Device Counts</th>
+                    <th scope="col">Device Category</th>
+                    <th scope="col">Device Picture</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>mdo</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>mdo</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
